@@ -42,10 +42,10 @@ Projeyi bilgisayarınıza klonlamak için:
 ```bash
 git clone https://github.com/EceBiricik/rigforge.git
 
-## 📌 Geliştirme Süreci
+## 🚀 Geliştirme Süreci
 
-Bu proje ekip çalışmasıyla GitHub üzerinden geliştirilmektedir. Geliştirme sürecinde branch, pull request ve issue yönetimi kullanılacaktır.
+Bu proje ekip çalışmasıyla GitHub üzerinden geliştirilmektedir.
 
-## 📄 Lisans
-
-Bu proje eğitim amacıyla geliştirilmiştir.
+- Her yeni özellik için ayrı bir branch oluşturulur.
+- Değişiklikler Pull Request (PR) ile `main` branch'ine eklenir.
+- Issue ve Pull Request yapısı takip edilir.
