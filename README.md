@@ -40,8 +40,7 @@ RigForge, bilgisayar bileşenlerinin satışına yönelik geliştirilen modern b
 Projeyi bilgisayarınıza klonlamak için:
 
 ```bash
-git clone https://github.com/EceBirick/rigforge.git
-```
+git clone https://github.com/EceBiricik/rigforge.git
 
 ## 📌 Geliştirme Süreci
 
