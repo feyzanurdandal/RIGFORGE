@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>RigForge | Admin Paneli</title>
+    <link href="shared.css" rel="stylesheet" />
+    <link href="admin.css" rel="stylesheet" />
+    <link href="rigforge-shell.css" rel="stylesheet" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body class="admin-body">
+    <aside class="admin-sidebar">
+      <a class="brand" href="admin.html">RIGFORGE</a>
+      <span class="admin-label">YÖNETİM PANELİ</span>
+      <nav>
+        <button class="admin-nav active" data-admin-tab="dashboard">
+          ◫ Dashboard
+        </button>
+        <button class="admin-nav" data-admin-tab="products">▦ Ürünler</button>
+        <button class="admin-nav" data-admin-tab="orders">▣ Siparişler</button>
+        <button class="admin-nav" data-admin-tab="users">◉ Kullanıcılar</button>
+        <button class="admin-nav" data-admin-tab="messages">✉ Mesajlar</button>
+        <button class="admin-nav" data-admin-tab="settings">⚙ Ayarlar</button>
+      </nav>
+      <a class="back-site" href="index.html">← Siteye dön</a>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <h1 id="adminTitle">Dashboard</h1>
+          <p>RigForge mağazanı buradan yönet.</p>
+        </div>
+        <div class="admin-user">
+          <div class="admin-avatar">AD</div>
+          <div><strong>Admin</strong><span>Yönetici</span></div>
+        </div>
+      </header>
+      <section class="admin-panel active" id="dashboard">
+        <div class="admin-stats">
+          <article class="metric card">
+            <span>Toplam Gelir</span><strong>₺2.350.000</strong
+            ><small class="status-success">+12,8% bu ay</small>
+          </article>
+          <article class="metric card">
+            <span>Siparişler</span><strong>421</strong
+            ><small class="status-success">+31 yeni</small>
+          </article>
+          <article class="metric card">
+            <span>Kullanıcılar</span><strong>872</strong
+            ><small class="status-success">+54 yeni</small>
+          </article>
+          <article class="metric card">
+            <span>Düşük Stok</span><strong>14</strong
+            ><small class="status-danger">Kontrol gerekli</small>
+          </article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="card admin-card">
+            <div class="card-title">
+              <h2>Satış Özeti</h2>
+              <select class="select mini-select">
+                <option>Son 7 gün</option>
+                <option>Son 30 gün</option>
+              </select>
+            </div>
+            <div class="chart-bars">
+              <div style="height: 45%"><span>Pzt</span></div>
+              <div style="height: 68%"><span>Sal</span></div>
+              <div style="height: 52%"><span>Çar</span></div>
+              <div style="height: 82%"><span>Per</span></div>
+              <div style="height: 70%"><span>Cum</span></div>
+              <div style="height: 92%"><span>Cmt</span></div>
+              <div style="height: 77%"><span>Paz</span></div>
+            </div>
+          </article>
+          <article class="card admin-card">
+            <h2>Son Aktiviteler</h2>
+            <div class="activity">
+              <span class="dot green"></span>
+              <div>
+                <strong>Yeni sipariş</strong>
+                <p>RF-10482 oluşturuldu.</p>
+              </div>
+            </div>
+            <div class="activity">
+              <span class="dot blue"></span>
+              <div>
+                <strong>Yeni kullanıcı</strong>
+                <p>Ayşe Demir kayıt oldu.</p>
+              </div>
+            </div>
+            <div class="activity">
+              <span class="dot red"></span>
+              <div>
+                <strong>Stok uyarısı</strong>
+                <p>RTX 5070 stoğu 3 adede düştü.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="admin-panel" id="products">
+        <div class="section-toolbar">
+          <input
+            class="input"
+            id="productSearch"
+            placeholder="Ürün ara..."
+          /><button class="primary-btn" id="newProductBtn">Yeni Ürün</button>
+        </div>
+        <div class="card admin-card table-wrap">
+          <table id="productTable">
+            <thead>
+              <tr>
+                <th>Ürün</th>
+                <th>Kategori</th>
+                <th>Fiyat</th>
+                <th>Stok</th>
+                <th>Durum</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AMD Ryzen 7 7800X3D</td>
+                <td>İşlemci</td>
+                <td>₺15.999</td>
+                <td>18</td>
+                <td class="status-success">Aktif</td>
+                <td><button class="mini-btn">Düzenle</button></td>
+              </tr>
+              <tr>
+                <td>MSI RTX 5070 Gaming Trio</td>
+                <td>Ekran Kartı</td>
+                <td>₺32.499</td>
+                <td>3</td>
+                <td class="status-warning">Düşük stok</td>
+                <td><button class="mini-btn">Düzenle</button></td>
+              </tr>
+              <tr>
+                <td>Kingston Fury Beast 32 GB</td>
+                <td>RAM</td>
+                <td>₺3.899</td>
+                <td>42</td>
+                <td class="status-success">Aktif</td>
+                <td><button class="mini-btn">Düzenle</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="admin-panel" id="orders">
+        <div class="card admin-card table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Sipariş No</th>
+                <th>Müşteri</th>
+                <th>Tutar</th>
+                <th>Durum</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RF-10482</td>
+                <td>Ali Yılmaz</td>
+                <td>₺56.840</td>
+                <td>
+                  <select class="select mini-select">
+                    <option>Hazırlanıyor</option>
+                    <option>Kargoya verildi</option>
+                    <option>Teslim edildi</option>
+                  </select>
+                </td>
+                <td><button class="mini-btn">Detay</button></td>
+              </tr>
+              <tr>
+                <td>RF-10481</td>
+                <td>Ayşe Demir</td>
+                <td>₺21.990</td>
+                <td>
+                  <select class="select mini-select">
+                    <option>Kargoya verildi</option>
+                    <option>Teslim edildi</option>
+                  </select>
+                </td>
+                <td><button class="mini-btn">Detay</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="admin-panel" id="users">
+        <div class="card admin-card table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Kullanıcı</th>
+                <th>E-posta</th>
+                <th>Rol</th>
+                <th>Durum</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ali Yılmaz</td>
+                <td>ali@mail.com</td>
+                <td>Kullanıcı</td>
+                <td class="status-success">Aktif</td>
+                <td><button class="mini-btn">Görüntüle</button></td>
+              </tr>
+              <tr>
+                <td>Ayşe Demir</td>
+                <td>ayse@mail.com</td>
+                <td>Kullanıcı</td>
+                <td class="status-success">Aktif</td>
+                <td><button class="mini-btn">Görüntüle</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="admin-panel" id="messages">
+        <div class="messages-grid">
+          <article class="card message-card">
+            <span class="badge">RF-123456</span>
+            <h3>Uyumluluk sorusu</h3>
+            <p>Ryzen 7 7800X3D ile B650 anakart uyumlu mu?</p>
+            <div>
+              <strong>Ali Yılmaz</strong
+              ><button class="primary-btn">Cevapla</button>
+            </div>
+          </article>
+          <article class="card message-card">
+            <span class="badge">RF-123455</span>
+            <h3>Kargo durumu</h3>
+            <p>Siparişim ne zaman kargoya verilecek?</p>
+            <div>
+              <strong>Ayşe Demir</strong
+              ><button class="primary-btn">Cevapla</button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="admin-panel" id="settings">
+        <form class="card admin-card">
+          <h2>Site Ayarları</h2>
+          <div class="form-group">
+            <label class="label">Site Adı</label
+            ><input class="input" value="RigForge" />
+          </div>
+          <div class="form-group">
+            <label class="label">Destek E-postası</label
+            ><input class="input" value="destek@rigforge.com" />
+          </div>
+          <button
+            class="primary-btn"
+            onclick="alert('Ayarlar kaydedildi.')"
+            type="button"
+          >
+            Kaydet
+          </button>
+        </form>
+      </section>
+    </main>
+    <div class="modal" hidden="" id="productModal">
+      <div class="modal-card card">
+        <button class="modal-close" id="closeModal">×</button>
+        <h2>Yeni Ürün</h2>
+        <div class="form-group">
+          <label class="label">Ürün Adı</label><input class="input" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="label">Kategori</label
+            ><select class="select">
+              <option>İşlemci</option>
+              <option>Ekran Kartı</option>
+              <option>Anakart</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="label">Fiyat</label
+            ><input class="input" type="number" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="label">Stok</label><input class="input" type="number" />
+        </div>
+        <button
+          class="primary-btn"
+          onclick="alert('Ürün backend bağlandığında kaydedilecek.')"
+        >
+          Ürünü Kaydet
+        </button>
+      </div>
+    </div>
+    <script src="admin.js"></script>
+    <script src="rigforge-shell.js"></script>
+  </body>
+</html>

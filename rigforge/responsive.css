@@ -1,0 +1,834 @@
+@media (max-width: 1100px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  .site-header.rigforge-header {
+    height: auto !important;
+    min-height: 72px !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 8px 14px !important;
+    padding: 11px 18px 8px !important;
+  }
+  .rigforge-header .rigforge-brand,
+  .rigforge-header .brand {
+    min-width: 0;
+  }
+  .rigforge-header .header-actions {
+    justify-self: end;
+    gap: 8px !important;
+  }
+  .rigforge-header .main-nav {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(18px, 5vw, 42px) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 2px 0 4px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    scrollbar-width: none;
+  }
+  .rigforge-header .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .rigforge-header .main-nav a {
+    flex: 0 0 auto !important;
+    padding: 8px 0 !important;
+    font-size: 12px !important;
+  }
+  .rigforge-header .main-nav a.active::after {
+    bottom: 0 !important;
+  }
+  .rf-menu-toggle {
+    display: none !important;
+  }
+  .rigforge-header .build-now-button,
+  .rigforge-header .build-now {
+    display: none !important;
+  }
+
+  /* Ana sayfa */
+  .hero {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+  .hero-copy {
+    max-width: 820px;
+    margin-inline: auto;
+  }
+  .hero-visual {
+    width: min(760px, 100%);
+    margin-inline: auto;
+  }
+  .feature-grid,
+  .category-grid,
+  .systems-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .footer-grid,
+  .footer-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .builder-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    min-height: auto !important;
+  }
+  .builder-sidebar {
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 15px 18px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--rf-border, #272c3a) !important;
+    overflow: visible !important;
+  }
+  .sidebar-title {
+    margin: 0 0 10px !important;
+    padding: 0 !important;
+  }
+  .component-navigation {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    overflow: visible !important;
+  }
+  .component-nav-item {
+    min-width: 0 !important;
+    min-height: 46px !important;
+    padding: 9px 10px !important;
+    justify-content: flex-start !important;
+    line-height: 1.25 !important;
+  }
+  .component-nav-item span:last-child {
+    min-width: 0;
+  }
+  .sidebar-bottom {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 270px) !important;
+    gap: 10px !important;
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+  }
+  .build-progress,
+  .save-build-button {
+    margin: 0 !important;
+  }
+  .save-build-button {
+    min-height: 58px !important;
+    height: 100% !important;
+  }
+  .builder-main,
+  .builder-content {
+    min-width: 0 !important;
+    padding: 28px 22px 42px !important;
+  }
+  .builder-heading {
+    gap: 18px !important;
+    align-items: flex-start !important;
+  }
+  .builder-heading > div:first-child {
+    min-width: 0;
+  }
+  .builder-heading h1 {
+    max-width: 100% !important;
+    font-size: clamp(42px, 7vw, 66px) !important;
+    line-height: 0.98 !important;
+    overflow-wrap: anywhere;
+  }
+  .step-indicator {
+    flex: 0 0 auto !important;
+  }
+  .filter-panel {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+  .reset-button {
+    width: 100% !important;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .product-card {
+    min-width: 0 !important;
+  }
+  .build-summary {
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    border-left: 0 !important;
+    border-top: 1px solid var(--rf-border, #272c3a) !important;
+    padding: 22px !important;
+  }
+  .performance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Sepet / profil */
+  .cart-layout,
+  .profile-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .summary,
+  .profile-menu {
+    position: static !important;
+  }
+  .orders-table,
+  .admin-table-wrap,
+  .table-wrap {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .orders-table table,
+  .admin-table-wrap table,
+  .table-wrap table {
+    min-width: 700px;
+  }
+
+  /* Admin */
+  .admin-body {
+    grid-template-columns: 1fr !important;
+  }
+  .admin-sidebar {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .admin-sidebar nav {
+    display: flex !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+  }
+  .admin-nav {
+    flex: 0 0 auto !important;
+  }
+  .admin-main {
+    min-width: 0 !important;
+    padding: 24px 18px !important;
+  }
+  .dashboard-grid,
+  .messages-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header.rigforge-header {
+    padding: 10px 12px 7px !important;
+  }
+  .rigforge-brand.brand,
+  .rigforge-brand {
+    font-size: 18px !important;
+  }
+  .brand-mark {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .rigforge-header .nav-action {
+    min-width: 40px !important;
+    width: 40px !important;
+    min-height: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+  .rigforge-header .action-label {
+    display: none !important;
+  }
+  .rigforge-header .main-nav {
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    padding-inline: 2px !important;
+  }
+
+  .hero {
+    padding: 44px 18px !important;
+    text-align: center;
+  }
+  .hero-copy > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-actions,
+  .cta-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  .feature-grid,
+  .category-grid,
+  .systems-grid,
+  .footer-grid,
+  .footer-columns {
+    grid-template-columns: 1fr !important;
+  }
+
+  .builder-sidebar {
+    padding: 13px 12px !important;
+  }
+  .component-navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .component-nav-item {
+    min-height: 48px !important;
+    padding: 9px 12px !important;
+  }
+  .sidebar-bottom {
+    grid-template-columns: 1fr !important;
+  }
+  .save-build-button {
+    min-height: 48px !important;
+  }
+
+  .builder-main,
+  .builder-content {
+    padding: 24px 16px 36px !important;
+  }
+  .builder-heading {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 12px !important;
+    margin-bottom: 22px !important;
+  }
+  .builder-heading h1 {
+    font-size: clamp(38px, 10vw, 54px) !important;
+    letter-spacing: -1.6px !important;
+  }
+  .builder-heading p {
+    grid-column: 1 / -1 !important;
+    margin-top: 4px !important;
+  }
+  .step-indicator {
+    min-width: 74px !important;
+    padding: 10px !important;
+  }
+  .step-indicator strong {
+    font-size: 22px !important;
+  }
+  .filter-panel {
+    grid-template-columns: 1fr !important;
+    padding: 14px !important;
+  }
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .product-card {
+    grid-template-columns: minmax(130px, 36%) minmax(0, 1fr) !important;
+    min-height: 245px !important;
+  }
+  .product-image {
+    min-height: 245px !important;
+  }
+  .product-info {
+    min-width: 0 !important;
+    padding: 18px !important;
+  }
+  .product-info h2 {
+    min-height: auto !important;
+  }
+  .performance-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .build-summary {
+    padding: 18px 16px 28px !important;
+  }
+
+  .profile-layout {
+    grid-template-areas: none !important;
+  }
+  .profile-menu {
+    display: flex !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    padding: 8px !important;
+    scrollbar-width: none;
+  }
+  .profile-menu::-webkit-scrollbar {
+    display: none;
+  }
+  .profile-menu .tab-btn {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .auth-shell {
+    grid-template-columns: 1fr !important;
+  }
+  .auth-visual {
+    min-height: 220px !important;
+  }
+  .auth-panel {
+    padding: 16px !important;
+  }
+
+  .legal-main {
+    width: 100% !important;
+    padding: 36px 18px 70px !important;
+  }
+  .legal-card {
+    padding: 24px !important;
+  }
+  .systems-head {
+    align-items: flex-start !important;
+  }
+  .system-filters {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+  }
+  .system-filters button {
+    flex: 0 0 auto !important;
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header.rigforge-header {
+    padding: 9px 10px 6px !important;
+  }
+  .rigforge-brand.brand,
+  .rigforge-brand {
+    font-size: 17px !important;
+  }
+  .brand-mark {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .rigforge-header .header-actions {
+    gap: 5px !important;
+  }
+  .rigforge-header .nav-action {
+    min-width: 38px !important;
+    width: 38px !important;
+    min-height: 38px !important;
+    height: 38px !important;
+  }
+  .rigforge-header .main-nav {
+    gap: 20px !important;
+  }
+  .rigforge-header .main-nav a {
+    font-size: 11px !important;
+  }
+
+  .hero {
+    padding: 38px 14px !important;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 13vw, 52px) !important;
+  }
+  .hero-actions,
+  .cta-actions {
+    flex-direction: column !important;
+  }
+  .hero-actions .btn,
+  .cta-actions .btn {
+    width: 100% !important;
+  }
+  .section {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .component-nav-item {
+    font-size: 12px !important;
+    gap: 7px !important;
+  }
+  .component-nav-icon {
+    flex: 0 0 auto !important;
+  }
+  .builder-main,
+  .builder-content {
+    padding: 20px 12px 32px !important;
+  }
+  .builder-heading {
+    grid-template-columns: 1fr !important;
+  }
+  .builder-heading h1 {
+    font-size: 36px !important;
+  }
+  .builder-heading p {
+    grid-column: 1 !important;
+  }
+  .step-indicator {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+  .product-card {
+    grid-template-columns: 1fr !important;
+  }
+  .product-image {
+    min-height: 190px !important;
+  }
+  .product-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .select-button {
+    width: 100% !important;
+  }
+  .results-line {
+    align-items: flex-start !important;
+    gap: 7px !important;
+    flex-direction: column !important;
+  }
+  .bottom-actions {
+    flex-direction: column !important;
+  }
+  .bottom-actions a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .cart-item {
+    grid-template-columns: 74px minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+  .cart-item img {
+    width: 74px !important;
+    height: 74px !important;
+  }
+  .cart-item > :last-child {
+    grid-column: 1 / -1 !important;
+  }
+  .stats-grid,
+  .admin-stats {
+    grid-template-columns: 1fr !important;
+  }
+  .address-card,
+  .order-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+  .profile-modal-dialog {
+    padding: 24px 18px !important;
+  }
+  .legal-card {
+    padding: 20px 17px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header.rigforge-header {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    row-gap: 8px !important;
+    padding: 10px 12px 8px !important;
+  }
+
+  .rigforge-header .main-nav {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    padding: 4px 2px 2px !important;
+    overflow: visible !important;
+  }
+
+  .rigforge-header .main-nav a {
+    min-width: 0 !important;
+    padding: 8px 0 7px !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+  }
+
+  .hero {
+    min-height: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    padding: 34px 16px 42px !important;
+    overflow: hidden !important;
+    text-align: center !important;
+  }
+
+  .hero-copy {
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero .eyebrow {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 9px !important;
+    line-height: 1.45 !important;
+    letter-spacing: 1.25px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .hero h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 22px auto 18px !important;
+    font-size: clamp(38px, 11.5vw, 58px) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -2.2px !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  .hero-copy > p {
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    padding: 0 4px !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+
+  .hero-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 28px !important;
+  }
+
+  .hero-actions .btn {
+    width: min(100%, 330px) !important;
+    min-width: 0 !important;
+    min-height: 58px !important;
+    padding: 12px 18px !important;
+  }
+
+  .hero-visual {
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 4px auto 0 !important;
+  }
+
+  .hero-visual .image-frame,
+  .hero-visual img {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header.rigforge-header {
+    padding: 8px 7px 7px !important;
+    row-gap: 6px !important;
+  }
+
+  .rigforge-header .rigforge-brand {
+    gap: 8px !important;
+    font-size: 16px !important;
+  }
+
+  .rigforge-header .brand-mark {
+    width: 31px !important;
+    height: 31px !important;
+  }
+
+  .rigforge-header .main-nav {
+    gap: 7px !important;
+    padding-inline: 0 !important;
+  }
+
+  .rigforge-header .main-nav a {
+    font-size: 10px !important;
+    letter-spacing: -0.15px !important;
+  }
+
+  .hero {
+    gap: 26px !important;
+    padding: 30px 12px 36px !important;
+  }
+
+  .hero .eyebrow {
+    padding: 0 6px !important;
+    font-size: 8px !important;
+    letter-spacing: 1.05px !important;
+  }
+
+  .hero h1 {
+    margin-top: 20px !important;
+    font-size: clamp(34px, 11.2vw, 44px) !important;
+    line-height: 0.94 !important;
+    letter-spacing: -1.7px !important;
+  }
+
+  .hero-copy > p {
+    max-width: 350px !important;
+    font-size: 13px !important;
+    line-height: 1.62 !important;
+  }
+
+  .hero-actions .btn {
+    width: min(100%, 310px) !important;
+    min-height: 56px !important;
+    font-size: 11px !important;
+  }
+
+  .hero-visual {
+    max-width: 350px !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .site-header.rigforge-header {
+    position: sticky !important;
+    top: 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 10px 10px 8px !important;
+    column-gap: 10px !important;
+    row-gap: 8px !important;
+  }
+
+  .site-header.rigforge-header .main-nav {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    order: initial !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 2px !important;
+    gap: 22px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-bottom: 1px solid #202533 !important;
+    transform: none !important;
+  }
+
+  .site-header.rigforge-header .main-nav a {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding: 8px 0 10px !important;
+    margin: 0 !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+  }
+
+  .site-header.rigforge-header .main-nav a.active::after {
+    bottom: 2px !important;
+  }
+
+  .site-header.rigforge-header .header-actions {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: end !important;
+    align-self: center !important;
+  }
+
+  .site-header.rigforge-header .rigforge-brand {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .hero {
+    min-height: 0 !important;
+    padding-top: 34px !important;
+  }
+
+  .hero-copy {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .hero h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 18px auto 20px !important;
+    font-size: clamp(36px, 10.8vw, 48px) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -1.5px !important;
+    text-align: center !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  .hero h1 br {
+    display: block !important;
+  }
+
+  .hero-copy > p {
+    width: min(100%, 430px) !important;
+    max-width: 430px !important;
+    margin: 0 auto 28px !important;
+    padding: 0 4px !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    text-align: center !important;
+  }
+
+  .hero-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .hero-actions .btn {
+    width: min(100%, 320px) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header.rigforge-header .main-nav {
+    gap: 17px !important;
+  }
+  .site-header.rigforge-header .main-nav a {
+    font-size: 10px !important;
+  }
+  .hero h1 {
+    font-size: 34px !important;
+  }
+}

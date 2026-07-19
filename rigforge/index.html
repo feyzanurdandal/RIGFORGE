@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="RIGFORGE premium gaming PC builder" name="description" />
+    <title>RIGFORGE | Oyuncu Bilgisayarı Toplama</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Mono:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link href="rigforge-shell.css" rel="stylesheet" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body>
+    <header class="site-header rigforge-header">
+      <a class="brand rigforge-brand" href="index.html"
+        ><span class="brand-mark">R</span><span>RIGFORGE</span></a
+      >
+      <nav aria-label="Ana menü" class="main-nav">
+        <a class="active" href="index.html">Sistemler</a>
+        <a href="index.html#components">Bileşenler</a>
+        <a href="builder.html">Sistem Toplama</a>
+        <a href="index.html#support">Destek</a>
+      </nav>
+      <div class="header-actions">
+        <a aria-label="Sepet" class="nav-action cart-action" href="cart.html">
+          <svg aria-hidden="true" viewbox="0 0 24 24">
+            <path
+              d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L20.5 8H7"
+            ></path>
+            <circle cx="10" cy="19" r="1.4"></circle>
+            <circle cx="18" cy="19" r="1.4"></circle>
+          </svg>
+          <span class="action-label">Sepet</span
+          ><span class="cart-count" id="headerCartCount">0</span>
+        </a>
+        <a
+          aria-label="Kullanıcı profili"
+          class="nav-action profile-action"
+          href="profile.html"
+        >
+          <span aria-hidden="true" class="profile-emoji">👤</span
+          ><span class="action-label">Profil</span>
+        </a>
+        <a class="build-now-button build-now" href="builder.html"
+          >+ Sistem Topla</a
+        >
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="systems">
+        <div class="hero-glow"></div>
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span></span> 9. NESİL İÇİN ÖN SİPARİŞLER BAŞLADI
+          </div>
+          <h1>PERFORMANSIN<br /><span>ÖTESİNE GEÇ</span></h1>
+          <p>
+            En yüksek performansı isteyen kullanıcılar için hassasiyetle
+            tasarlanmış masaüstü sistemler. RIGFORGE donanım ekosistemiyle akıcı
+            kare hızlarını ve sinematik görüntü kalitesini taviz vermeden
+            deneyimleyin.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="builder.html"
+              >HAYALİNDEKİ<br />SİSTEMİ TOPLA</a
+            >
+            <a class="btn btn-outline" href="hazir-sistemler.html"
+              >TÜM SİSTEMLERİ<br />İNCELE</a
+            >
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="image-frame">
+            <img
+              alt="RGB aydınlatmalı özel oyuncu bilgisayarı"
+              src="assets/hero-pc.jpg"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="section dark-section" id="featured">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">SEÇKİN SERİ</span>
+            <h2>Öne Çıkan Sistemler</h2>
+          </div>
+          <a class="browse-link" href="hazir-sistemler.html">TÜMÜNÜ İNCELE →</a>
+        </div>
+        <div class="featured-grid">
+          <article class="featured-main card reveal">
+            <div class="featured-overlay">
+              <div class="limited">SINIRLI ÜRETİM</div>
+              <div class="featured-price">₺189.999</div>
+              <div class="featured-bottom">
+                <div>
+                  <h3>RIGFORGE VORTEXX</h3>
+                  <p>
+                    Amiral gemisi iş istasyonumuz. Sıvı soğutmalı RTX 4090, 128
+                    GB DDR5 bellek ve özel titanyum kasa.
+                  </p>
+                  <div class="tags">
+                    <span>RTX 4090</span><span>I9-14900KS</span
+                    ><span>TİTANYUM SERİSİ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="featured-side card reveal">
+            <span class="product-kicker">KOMPAKT GÜÇ</span>
+            <h3>NEBULA SFF</h3>
+            <p>Boyutuna aldanmayın. 10 litrelik kasada saf performans.</p>
+            <div class="side-price-row">
+              <strong>₺94.999</strong>
+              <button aria-label="Sepete ekle" class="cart-button">🛒</button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section components-section" id="components">
+        <div class="center-heading reveal">
+          <span class="section-kicker">DONANIM ARŞİVİ</span>
+          <h2>Öne Çıkan Bileşenler</h2>
+          <p>
+            Sistemlerimizde yalnızca dünyanın önde gelen üreticilerinin en
+            yüksek kalite standartlarına sahip bileşenleri kullanılır.
+          </p>
+        </div>
+        <div class="components-grid">
+          <article class="component-card reveal">
+            <img
+              alt="NVIDIA RTX 4090 Ti ekran kartı"
+              src="assets/component-1.jpg"
+            />
+            <span class="component-type">EKRAN KARTI</span>
+            <h3>NVIDIA RTX 4090 Ti</h3>
+            <div class="score">PERFORMANS PUANI <b>9.8/10</b></div>
+          </article>
+          <article class="component-card reveal">
+            <img alt="Intel Core i9 işlemci" src="assets/component-2.jpg" />
+            <span class="component-type">İŞLEMCİ</span>
+            <h3>Intel Core i9-14900KS</h3>
+            <div class="score">PERFORMANS PUANI <b>9.6/10</b></div>
+          </article>
+          <article class="component-card reveal">
+            <img alt="64GB DDR5 RAM" src="assets/component-3.jpg" />
+            <span class="component-type">BELLEK</span>
+            <h3>64GB DDR5 8000MHz</h3>
+            <div class="score">PERFORMANS PUANI <b>9.2/10</b></div>
+          </article>
+          <article class="component-card reveal">
+            <img alt="4TB Gen5 NVMe SSD" src="assets/component-4.jpg" />
+            <span class="component-type">DEPOLAMA</span>
+            <h3>4TB Gen5 NVMe SSD</h3>
+            <div class="score">PERFORMANS PUANI <b>9.0/10</b></div>
+          </article>
+        </div>
+      </section>
+      <section class="precision-section" id="support">
+        <div class="precision-copy reveal">
+          <span class="section-kicker">YAKLAŞIMIMIZ</span>
+          <h2>Her Şeyden Önce Hassasiyet.</h2>
+          <p>
+            Biz yalnızca bilgisayar toplamıyoruz; yüksek kaliteli bilgisayar
+            deneyimleri tasarlıyoruz. Her kablo özenle düzenlenir, her bileşen
+            48 saat boyunca test edilir ve her sistem işlevsel bir sanat eseri
+            olarak hazırlanır.
+          </p>
+          <div class="features">
+            <div class="feature">
+              <div class="feature-icon">⚙</div>
+              <h4>5 Yıl Garanti</h4>
+              <p>Yatırımınız için sektörün önde gelen koruması.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">◉</div>
+              <h4>Özel Destek</h4>
+              <p>Sisteminizi hazırlayan teknik ekibe doğrudan erişim.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">♞</div>
+              <h4>El İşçiliğiyle Montaj</h4>
+              <p>
+                Her sistem, montajını yapan uzman tarafından ayrı ayrı kontrol
+                edilir.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="precision-visual reveal"></div>
+      </section>
+      <section class="cta-section reveal">
+        <h2>Kendi<br /><em>Şaheserini Toplamaya Hazır mısın?</em></h2>
+        <p>
+          Sıfırdan başlayın veya önceden yapılandırılmış seçkin bir sistemi
+          özelleştirin. En yüksek performansa giden yolculuğunuz burada
+          başlıyor.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="builder.html"
+            >SİSTEM TOPLAMAYA BAŞLA</a
+          >
+          <a class="btn btn-outline" href="#">BİR UZMANLA GÖRÜŞ</a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href="#">RIGFORGE</a>
+        <p>© 2026 RIGFORGE PC SİSTEMLERİ. HASSASİYETLE TASARLANDI.</p>
+      </div>
+      <div class="footer-links">
+        <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+        <a href="kullanim-sartlari.html">Kullanım Şartları</a>
+        <a href="kargo-bilgileri.html">Kargo Bilgileri</a>
+        <a href="garanti.html">Garanti</a>
+        <a href="kargo-takip.html">Kargo Takibi</a>
+      </div>
+      <div class="socials">
+        <a aria-label="RSS" href="#">◔</a>
+        <a aria-label="E-posta" href="#">@</a>
+        <a aria-label="Paylaş" href="#">↗</a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="rigforge-shell.js"></script>
+  </body>
+</html>

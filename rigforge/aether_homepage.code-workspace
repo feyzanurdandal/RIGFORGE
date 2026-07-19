@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../rigforge_gpu_only"
+		},
+		{
+			"path": "../../rigforge_motherboard"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "RIGFORGE_homepage"
+	}
+}

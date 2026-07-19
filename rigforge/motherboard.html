@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="RigForge oyuncu bilgisayarı bileşen seçimi"
+      name="description"
+    />
+    <title>RigForge | Anakart Seçimi</title>
+    <link href="rigforge-shell.css" rel="stylesheet" />
+    <link href="component-pages.css" rel="stylesheet" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body
+    data-component-key="motherboard"
+    data-component-label="Anakart"
+    data-step="3"
+  >
+    <header class="site-header rigforge-header">
+      <a class="brand rigforge-brand" href="index.html"
+        ><span class="brand-mark">R</span><span>RIGFORGE</span></a
+      >
+      <nav aria-label="Ana menü" class="main-nav">
+        <a href="index.html">Sistemler</a
+        ><a href="index.html#components">Bileşenler</a
+        ><a class="active" href="builder.html">Sistem Topla</a
+        ><a href="index.html#support">Destek</a>
+      </nav>
+      <div class="header-actions">
+        <a aria-label="Sepet" class="nav-action cart-action" href="cart.html"
+          ><svg aria-hidden="true" viewbox="0 0 24 24">
+            <path
+              d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L20.5 8H7"
+            ></path>
+            <circle cx="10" cy="19" r="1.4"></circle>
+            <circle cx="18" cy="19" r="1.4"></circle></svg
+          ><span class="action-label">Sepet</span
+          ><span class="cart-count" id="headerCartCount">0</span></a
+        ><a
+          aria-label="Profil"
+          class="nav-action profile-action"
+          href="profile.html"
+          ><span aria-hidden="true" class="profile-emoji">👤</span
+          ><span class="action-label">Profil</span></a
+        ><a class="build-now-button build-now" href="builder.html"
+          >+ Sistem Topla</a
+        >
+      </div>
+    </header>
+    <main class="builder-layout">
+      <aside class="builder-sidebar">
+        <div class="sidebar-title">Yapılandırma</div>
+        <nav class="component-navigation">
+          <a class="component-nav-item" href="builder.html"
+            ><span class="component-nav-icon">◉</span><span>İşlemci</span></a
+          ><a class="component-nav-item" href="gpu.html"
+            ><span class="component-nav-icon">▦</span
+            ><span>Ekran Kartı</span></a
+          ><a class="component-nav-item active" href="motherboard.html"
+            ><span class="component-nav-icon">▣</span><span>Anakart</span></a
+          ><a class="component-nav-item" href="ram.html"
+            ><span class="component-nav-icon">▥</span
+            ><span>RAM / Bellek</span></a
+          ><a class="component-nav-item" href="storage.html"
+            ><span class="component-nav-icon">▰</span><span>Depolama</span></a
+          ><a class="component-nav-item" href="case.html"
+            ><span class="component-nav-icon">□</span><span>Kasa</span></a
+          ><a class="component-nav-item" href="psu.html"
+            ><span class="component-nav-icon">⚡</span
+            ><span>Güç Kaynağı</span></a
+          ><a class="component-nav-item" href="cooler.html"
+            ><span class="component-nav-icon">❄</span
+            ><span>İşlemci Soğutucu</span></a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="build-progress">
+            <div class="build-progress-top">
+              <span>Sistem İlerlemesi</span
+              ><strong id="progressText">0 / 8</strong>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+          <button class="save-build-button" id="saveBuildButton" type="button">
+            Sistemi Kaydet
+          </button>
+        </div>
+      </aside>
+      <section class="builder-main">
+        <div class="builder-breadcrumb">ADIM 03 / ANAKART SEÇİMİ</div>
+        <div class="builder-heading">
+          <div>
+            <h1>Anakartınızı Seçin</h1>
+            <p>İşlemciniz, kasanız ve belleğinizle uyumlu anakartı seçin.</p>
+          </div>
+          <div class="step-indicator">
+            <span>Mevcut Adım</span><strong>03</strong>
+          </div>
+        </div>
+        <section aria-label="Ürün filtreleri" class="filter-panel">
+          <div class="filter-group">
+            <label for="filter-platform">Platform</label
+            ><select data-filter="platform" id="filter-platform">
+              <option value="all">Tüm Platformlar</option>
+              <option value="intel">Intel</option>
+              <option value="amd">AMD</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-form">Form Faktörü</label
+            ><select data-filter="form" id="filter-form">
+              <option value="all">Tüm Boyutlar</option>
+              <option value="atx">ATX</option>
+              <option value="micro-atx">Micro-ATX</option>
+              <option value="mini-itx">Mini-ITX</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-brand">Marka</label
+            ><select data-filter="brand" id="filter-brand">
+              <option value="all">Tüm Markalar</option>
+              <option value="asus">ASUS</option>
+              <option value="msi">MSI</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="asrock">ASRock</option>
+            </select>
+          </div>
+          <button class="reset-button" id="resetFilters" type="button">
+            Filtreleri Temizle
+          </button>
+        </section>
+        <div class="results-line">
+          <span><strong id="resultCount">6</strong> ürün gösteriliyor</span
+          ><span id="selectionHint">Bir ürün seçerek devam edin.</span>
+        </div>
+        <section class="product-grid" id="productGrid">
+          <article
+            class="product-card"
+            data-brand="asus"
+            data-brand-name="ASUS"
+            data-form-factor="atx"
+            data-name="ROG Strix Z790-E Gaming WiFi II"
+            data-platform="intel"
+            data-price="21999"
+          >
+            <div class="product-badge">Premium</div>
+            <div class="product-image">
+              <span>Z790</span><small>ASUS</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">ASUS</span>
+              <h2>ROG Strix Z790-E Gaming WiFi II</h2>
+              <ul>
+                <li>Intel LGA1700 socket</li>
+                <li>DDR5 memory support</li>
+                <li>Wi-Fi 7 and PCIe 5.0</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺21.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="msi"
+            data-brand-name="MSI"
+            data-form-factor="atx"
+            data-name="MAG Z790 Tomahawk MAX WiFi"
+            data-platform="intel"
+            data-price="13999"
+          >
+            <div class="product-badge">Popular</div>
+            <div class="product-image"><span>Z790</span><small>MSI</small></div>
+            <div class="product-info">
+              <span class="product-brand">MSI</span>
+              <h2>MAG Z790 Tomahawk MAX WiFi</h2>
+              <ul>
+                <li>Intel LGA1700 socket</li>
+                <li>DDR5 memory support</li>
+                <li>2.5G LAN and Wi-Fi 7</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺13.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="gigabyte"
+            data-brand-name="Gigabyte"
+            data-form-factor="atx"
+            data-name="X670E AORUS Master"
+            data-platform="amd"
+            data-price="22999"
+          >
+            <div class="product-badge">AM5</div>
+            <div class="product-image">
+              <span>X670E</span><small>Gigabyte</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">Gigabyte</span>
+              <h2>X670E AORUS Master</h2>
+              <ul>
+                <li>AMD AM5 socket</li>
+                <li>DDR5 memory support</li>
+                <li>PCIe 5.0 and Wi-Fi 6E</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺22.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="asrock"
+            data-brand-name="ASRock"
+            data-form-factor="atx"
+            data-name="B650 Steel Legend WiFi"
+            data-platform="amd"
+            data-price="10999"
+          >
+            <div class="product-badge">Value</div>
+            <div class="product-image">
+              <span>B650</span><small>ASRock</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">ASRock</span>
+              <h2>B650 Steel Legend WiFi</h2>
+              <ul>
+                <li>AMD AM5 socket</li>
+                <li>DDR5 memory support</li>
+                <li>2.5G LAN and Wi-Fi 6E</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺10.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="gigabyte"
+            data-brand-name="Gigabyte"
+            data-form-factor="micro-atx"
+            data-name="B760M AORUS Elite AX"
+            data-platform="intel"
+            data-price="8999"
+          >
+            <div class="product-badge">Compact</div>
+            <div class="product-image">
+              <span>B760M</span><small>Gigabyte</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">Gigabyte</span>
+              <h2>B760M AORUS Elite AX</h2>
+              <ul>
+                <li>Intel LGA1700 socket</li>
+                <li>Micro-ATX design</li>
+                <li>Wi-Fi 6E and DDR5</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺8.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="asus"
+            data-brand-name="ASUS"
+            data-form-factor="mini-itx"
+            data-name="ROG Strix B650E-I Gaming WiFi"
+            data-platform="amd"
+            data-price="15999"
+          >
+            <div class="product-badge">Mini-ITX</div>
+            <div class="product-image">
+              <span>B650E-I</span><small>ASUS</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">ASUS</span>
+              <h2>ROG Strix B650E-I Gaming WiFi</h2>
+              <ul>
+                <li>AMD AM5 socket</li>
+                <li>Mini-ITX design</li>
+                <li>PCIe 5.0 and Wi-Fi 6E</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺15.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+        </section>
+        <div class="empty-state" hidden="" id="emptyState">
+          Seçtiğiniz filtrelerle eşleşen ürün bulunamadı.
+        </div>
+        <section class="performance-panel">
+          <div>
+            <span>Sistem Özeti</span>
+            <h2>Seçiminizin Etkisi</h2>
+          </div>
+          <div class="performance-grid">
+            <div class="performance-item">
+              <span>Seçilen Bileşen</span
+              ><strong id="selectedProductName">Henüz seçilmedi</strong>
+            </div>
+            <div class="performance-item">
+              <span>Bileşen Fiyatı</span
+              ><strong id="selectedProductPrice">₺0</strong>
+            </div>
+            <div class="performance-item">
+              <span>Tahmini Sistem Toplamı</span
+              ><strong id="buildTotal">₺0</strong>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-actions">
+          <a class="secondary-button" href="gpu.html">← Ekran Kartına Dön</a
+          ><a
+            class="primary-button disabled"
+            href="ram.html"
+            id="continueButton"
+            >Belleğe Geç →</a
+          >
+        </div>
+      </section>
+      <aside class="build-summary">
+        <div class="summary-title">
+          <span>Canlı Sistem Durumu</span><strong>Aktif</strong>
+        </div>
+        <div class="preview-placeholder">
+          <span id="previewCode">RF</span
+          ><small>Seçilen bileşen burada görünür</small>
+        </div>
+        <section class="summary-section">
+          <span>Bu Adımdaki Seçim</span
+          ><strong id="summarySelectedName">Seçilmedi</strong>
+        </section>
+        <section class="summary-section">
+          <span>Seçilen Parça Sayısı</span
+          ><strong id="selectedCount">0 / 8</strong>
+        </section>
+        <section class="summary-section">
+          <span>Tahmini Güç</span><strong id="estimatedWattage">0 W</strong>
+        </section>
+        <section class="summary-total">
+          <div>
+            <span>Sistem Toplamı</span
+            ><small>Vergiler ödeme sırasında hesaplanır</small>
+          </div>
+          <strong id="summaryBuildTotal">₺0</strong>
+        </section>
+        <button
+          class="primary-action"
+          disabled=""
+          id="addToBuildButton"
+          type="button"
+        >
+          Seçimi Sisteme Ekle</button
+        ><button
+          class="secondary-action"
+          id="resetSelectionButton"
+          type="button"
+        >
+          Seçimi Sıfırla
+        </button>
+      </aside>
+    </main>
+    <script src="component-page.js"></script>
+    <script src="rigforge-shell.js"></script>
+  </body>
+</html>

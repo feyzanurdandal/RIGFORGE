@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>RigForge | Profil</title>
+    <link href="shared.css" rel="stylesheet" />
+    <link href="profile.css" rel="stylesheet" />
+    <link href="rigforge-shell.css" rel="stylesheet" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body>
+    <header class="site-header rigforge-header">
+      <a class="brand rigforge-brand" href="index.html"
+        ><span class="brand-mark">R</span><span>RIGFORGE</span></a
+      >
+      <nav aria-label="Ana menü" class="main-nav">
+        <a href="index.html">Sistemler</a>
+        <a href="index.html#components">Bileşenler</a>
+        <a href="builder.html">Sistem Topla</a>
+        <a href="index.html#support">Destek</a>
+      </nav>
+      <div class="header-actions">
+        <a aria-label="Sepet" class="nav-action cart-action" href="cart.html">
+          <svg aria-hidden="true" viewbox="0 0 24 24">
+            <path
+              d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L20.5 8H7"
+            ></path>
+            <circle cx="10" cy="19" r="1.4"></circle>
+            <circle cx="18" cy="19" r="1.4"></circle>
+          </svg>
+          <span class="action-label">Sepet</span
+          ><span class="cart-count" id="headerCartCount">0</span>
+        </a>
+        <a
+          aria-label="Kullanıcı profili"
+          class="nav-action profile-action"
+          href="profile.html"
+        >
+          <span aria-hidden="true" class="profile-emoji">👤</span
+          ><span class="action-label">Profil</span>
+        </a>
+        <a class="build-now-button build-now" href="builder.html"
+          >+ Sistem Topla</a
+        >
+      </div>
+    </header>
+    <section class="page-hero">
+      <div class="container profile-head">
+        <div class="avatar" id="avatar">RK</div>
+        <div>
+          <span class="eyebrow">KULLANICI PANELİ</span>
+          <h1 id="welcomeName">Hoş geldin</h1>
+          <p id="welcomeMail">Hesap bilgilerin burada.</p>
+        </div>
+      </div>
+    </section>
+    <main class="section">
+      <div class="container profile-layout">
+        <a class="back-home-link" href="index.html">← Ana Sayfaya Dön</a>
+        <aside class="profile-menu card">
+          <button class="tab-btn active" data-tab="overview">
+            Genel Bakış
+          </button>
+          <button class="tab-btn" data-tab="orders">Siparişlerim</button>
+          <button class="tab-btn" data-tab="addresses">Adreslerim</button>
+          <button class="tab-btn" data-tab="settings">Hesap Ayarları</button>
+          <button class="tab-btn logout-btn" id="logoutBtn" type="button">
+            Çıkış Yap
+          </button>
+        </aside>
+        <section class="tab-content">
+          <div class="tab-panel active" id="overview">
+            <div class="stats-grid">
+              <div class="stat card">
+                <span>Sipariş</span><strong>3</strong>
+              </div>
+              <div class="stat card">
+                <span>Kayıtlı Adres</span><strong>1</strong>
+              </div>
+            </div>
+            <div class="card panel-card">
+              <div class="panel-title">
+                <h2>Son Sipariş</h2>
+                <a data-open-tab="orders" href="#">Tümünü gör</a>
+              </div>
+              <div class="order-card">
+                <div>
+                  <span class="badge">RF-10482</span>
+                  <h3>Oyuncu Sistemi</h3>
+                  <p>12 Temmuz 2026 • 6 ürün</p>
+                </div>
+                <div>
+                  <strong>₺56.840</strong
+                  ><span class="status-warning">Hazırlanıyor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="orders">
+            <div class="card panel-card">
+              <h2>Siparişlerim</h2>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Tarih</th>
+                      <th>Tutar</th>
+                      <th>Durum</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>RF-10482</td>
+                      <td>12.07.2026</td>
+                      <td>₺56.840</td>
+                      <td class="status-warning">Hazırlanıyor</td>
+                      <td>
+                        <button
+                          class="mini-btn order-detail-btn"
+                          data-order="RF-10482"
+                        >
+                          Detay
+                        </button>
+                        <a class="mini-btn" href="kargo-takip.html"
+                          >Kargo Takibi</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>RF-10291</td>
+                      <td>24.06.2026</td>
+                      <td>₺8.499</td>
+                      <td class="status-success">Teslim edildi</td>
+                      <td>
+                        <button
+                          class="mini-btn order-detail-btn"
+                          data-order="RF-10291"
+                        >
+                          Detay
+                        </button>
+                        <a class="mini-btn" href="kargo-takip.html"
+                          >Kargo Takibi</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="addresses">
+            <div class="card panel-card">
+              <div class="panel-title">
+                <h2>Adreslerim</h2>
+                <button class="primary-btn" id="newAddressBtn" type="button">
+                  Yeni Adres
+                </button>
+              </div>
+              <div id="addressList"></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="settings">
+            <form class="card panel-card" id="profileForm">
+              <h2>Hesap Ayarları</h2>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="label">Ad Soyad</label
+                  ><input class="input" id="profileName" />
+                </div>
+                <div class="form-group">
+                  <label class="label">E-posta</label
+                  ><input class="input" id="profileEmail" type="email" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="label">Telefon</label
+                ><input class="input" id="profilePhone" />
+              </div>
+              <button class="primary-btn">Değişiklikleri Kaydet</button>
+              <p class="form-status" id="profileStatus"></p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="profile-modal" id="addressModal" hidden>
+      <div class="profile-modal-backdrop" data-close-modal="addressModal"></div>
+      <div
+        class="profile-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="addressModalTitle"
+      >
+        <button
+          class="profile-modal-close"
+          type="button"
+          data-close-modal="addressModal"
+          aria-label="Kapat"
+        >
+          ×
+        </button>
+        <h2 id="addressModalTitle">Yeni Adres</h2>
+        <form id="addressForm">
+          <input type="hidden" id="addressId" />
+          <div class="form-group">
+            <label class="label" for="addressTitle">Adres Başlığı</label
+            ><input
+              class="input"
+              id="addressTitle"
+              required
+              placeholder="Ev Adresi"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="label" for="addressCity">İl</label
+              ><input
+                class="input"
+                id="addressCity"
+                required
+                placeholder="Bursa"
+              />
+            </div>
+            <div class="form-group">
+              <label class="label" for="addressDistrict">İlçe</label
+              ><input
+                class="input"
+                id="addressDistrict"
+                required
+                placeholder="Nilüfer"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="label" for="addressText">Açık Adres</label
+            ><textarea
+              class="input address-textarea"
+              id="addressText"
+              required
+              placeholder="Mahalle, sokak, bina ve daire bilgileri"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label class="label" for="addressPhone">Telefon</label
+            ><input
+              class="input"
+              id="addressPhone"
+              placeholder="05xx xxx xx xx"
+            />
+          </div>
+          <button class="primary-btn" type="submit">Adresi Kaydet</button>
+        </form>
+      </div>
+    </div>
+    <div class="profile-modal" id="orderModal" hidden>
+      <div class="profile-modal-backdrop" data-close-modal="orderModal"></div>
+      <div
+        class="profile-modal-dialog order-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="orderModalTitle"
+      >
+        <button
+          class="profile-modal-close"
+          type="button"
+          data-close-modal="orderModal"
+          aria-label="Kapat"
+        >
+          ×
+        </button>
+        <h2 id="orderModalTitle">Sipariş Detayı</h2>
+        <div id="orderDetailContent"></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span>© 2026 RigForge</span><a href="support.html">Destek</a>
+    </footer>
+    <script src="profile.js"></script>
+    <script src="rigforge-shell.js"></script>
+  </body>
+</html>

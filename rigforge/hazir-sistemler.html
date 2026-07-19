@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RigForge | Hazır Sistemler</title>
+    <link href="shared.css" rel="stylesheet" />
+    <link href="rigforge-shell.css" rel="stylesheet" />
+    <style>
+      body {
+        background: #080a10;
+        color: #fff;
+      }
+      .legal-main {
+        max-width: 1080px;
+        margin: auto;
+        padding: 52px 24px 100px;
+      }
+      .legal-main > .back-home-link {
+        display: inline-flex;
+        margin: 0 0 30px;
+      }
+      .legal-main > .eyebrow {
+        display: block;
+        margin-bottom: 12px;
+        color: #8fbcff;
+        letter-spacing: 0.7px;
+      }
+      .legal-main h1 {
+        font-size: clamp(38px, 5vw, 58px);
+        line-height: 1.08;
+        margin: 0;
+      }
+      .legal-card {
+        background: #11141d;
+        border: 1px solid #303646;
+        border-radius: 20px;
+        padding: 34px;
+        margin-top: 32px;
+      }
+      .legal-card h2 {
+        margin: 32px 0 12px;
+        color: #fff;
+      }
+      .legal-card p,
+      .legal-card li {
+        color: #c7cddb;
+        line-height: 1.8;
+        font-size: 17px;
+      }
+      .simple-footer {
+        padding: 28px;
+        text-align: center;
+        border-top: 1px solid #252a36;
+        color: #b9c0d0;
+      }
+    </style>
+    <style>
+      .systems-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: end;
+      }
+      .system-filters {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 28px 0;
+      }
+      .system-filters button {
+        padding: 10px 15px;
+        border: 1px solid #303649;
+        border-radius: 999px;
+        background: #121621;
+        color: #dbe3f7;
+        cursor: pointer;
+      }
+      .system-filters button.active {
+        background: linear-gradient(135deg, #347cff, #965cff);
+        border-color: transparent;
+      }
+      .systems-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .system-card {
+        padding: 22px;
+        background: #11141d;
+        border: 1px solid #282d3b;
+        border-radius: 18px;
+      }
+      .system-card h2 {
+        font-size: 22px;
+      }
+      .system-card ul {
+        padding-left: 18px;
+        color: #9fa8bc;
+        line-height: 1.7;
+      }
+      .system-card strong {
+        font-size: 24px;
+      }
+      .system-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .system-actions a,
+      .system-actions button {
+        flex: 1;
+        padding: 11px;
+        border-radius: 10px;
+        border: 1px solid #303649;
+        background: #171c29;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+      }
+      .system-card[hidden] {
+        display: none !important;
+      }
+      .system-card ul {
+        color: #c2c8d6;
+      }
+      .systems-head p {
+        color: #c2c8d6;
+      }
+      @media (max-width: 850px) {
+        .systems-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body>
+    <header class="site-header rigforge-header">
+      <a class="brand rigforge-brand" href="index.html"
+        ><span class="brand-mark">R</span><span>RIGFORGE</span></a
+      >
+      <nav class="main-nav">
+        <a href="index.html">Sistemler</a
+        ><a href="index.html#components">Bileşenler</a
+        ><a href="builder.html">Sistem Topla</a
+        ><a href="index.html#support">Destek</a>
+      </nav>
+      <div class="header-actions">
+        <a class="nav-action cart-action" href="cart.html"
+          ><span>Sepet</span
+          ><span class="cart-count" id="headerCartCount">0</span></a
+        ><a class="nav-action profile-action" href="profile.html"
+          ><span class="profile-emoji">👤</span
+          ><span class="action-label">Profil</span></a
+        ><a class="build-now-button" href="builder.html">+ Sistem Topla</a>
+      </div>
+    </header>
+    <main class="legal-main">
+      <a class="back-home-link" href="index.html">← Ana Sayfaya Dön</a>
+      <div class="systems-head">
+        <div>
+          <span class="eyebrow">SEÇKİN SERİ</span>
+          <h1>Hazır Sistemler</h1>
+          <p>
+            İhtiyacınıza göre hazırlanmış, test edilmiş oyuncu bilgisayarları.
+          </p>
+        </div>
+      </div>
+      <div class="system-filters">
+        <button class="active" data-system-filter="all">Tümü</button
+        ><button data-system-filter="baslangic">Başlangıç</button
+        ><button data-system-filter="orta">Orta Seviye</button
+        ><button data-system-filter="ust">Üst Seviye</button
+        ><button data-system-filter="yayinci">Yayıncı</button>
+      </div>
+      <section class="systems-grid" id="readySystems">
+        <article class="system-card" data-tier="baslangic">
+          <span class="eyebrow">BAŞLANGIÇ</span>
+          <h2>Forge Starter</h2>
+          <ul>
+            <li>Ryzen 5 7600</li>
+            <li>RTX 5060</li>
+            <li>16 GB DDR5</li>
+            <li>1 TB NVMe SSD</li>
+          </ul>
+          <strong>₺44.999</strong>
+          <div class="system-actions">
+            <a href="builder.html">Özelleştir</a
+            ><button
+              data-add-system
+              data-name="Forge Starter"
+              data-price="44999"
+            >
+              Sepete Ekle
+            </button>
+          </div>
+        </article>
+        <article class="system-card" data-tier="orta">
+          <span class="eyebrow">ORTA SEVİYE</span>
+          <h2>Nebula Pro</h2>
+          <ul>
+            <li>Ryzen 7 7800X3D</li>
+            <li>RTX 5070 Ti</li>
+            <li>32 GB DDR5</li>
+            <li>2 TB NVMe SSD</li>
+          </ul>
+          <strong>₺89.999</strong>
+          <div class="system-actions">
+            <a href="builder.html">Özelleştir</a
+            ><button data-add-system data-name="Nebula Pro" data-price="89999">
+              Sepete Ekle
+            </button>
+          </div>
+        </article>
+        <article class="system-card" data-tier="ust yayinci">
+          <span class="eyebrow">AMİRAL GEMİSİ</span>
+          <h2>Vortex X</h2>
+          <ul>
+            <li>Intel Core i9-14900KS</li>
+            <li>RTX 4090</li>
+            <li>64 GB DDR5</li>
+            <li>4 TB Gen5 NVMe</li>
+          </ul>
+          <strong>₺189.999</strong>
+          <div class="system-actions">
+            <a href="builder.html">Özelleştir</a
+            ><button data-add-system data-name="Vortex X" data-price="189999">
+              Sepete Ekle
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="simple-footer">© 2026 RigForge</footer>
+    <script>
+      document.querySelectorAll("[data-system-filter]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            document
+              .querySelectorAll("[data-system-filter]")
+              .forEach((x) => x.classList.toggle("active", x === b));
+            document
+              .querySelectorAll(".system-card")
+              .forEach(
+                (c) =>
+                  (c.hidden = !(
+                    b.dataset.systemFilter === "all" ||
+                    c.dataset.tier.includes(b.dataset.systemFilter)
+                  )),
+              );
+          }),
+      );
+      document.querySelectorAll("[data-add-system]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            const cart = JSON.parse(
+              localStorage.getItem("rigforgeCart") || "[]",
+            );
+            cart.push({
+              name: b.dataset.name,
+              price: Number(b.dataset.price),
+              quantity: 1,
+            });
+            localStorage.setItem("rigforgeCart", JSON.stringify(cart));
+            b.textContent = "Eklendi ✓";
+          }),
+      );
+    </script>
+    <script src="rigforge-shell.js"></script>
+  </body>
+</html>

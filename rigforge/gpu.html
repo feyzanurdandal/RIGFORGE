@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="RigForge oyuncu bilgisayarı bileşen seçimi"
+      name="description"
+    />
+    <title>RigForge | Ekran Kartı Seçimi</title>
+    <link href="rigforge-shell.css" rel="stylesheet" />
+    <link href="component-pages.css" rel="stylesheet" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body
+    data-component-key="gpu"
+    data-component-label="Ekran Kartı"
+    data-step="2"
+  >
+    <header class="site-header rigforge-header">
+      <a class="brand rigforge-brand" href="index.html"
+        ><span class="brand-mark">R</span><span>RIGFORGE</span></a
+      >
+      <nav aria-label="Ana menü" class="main-nav">
+        <a href="index.html">Sistemler</a
+        ><a href="index.html#components">Bileşenler</a
+        ><a class="active" href="builder.html">Sistem Topla</a
+        ><a href="index.html#support">Destek</a>
+      </nav>
+      <div class="header-actions">
+        <a aria-label="Sepet" class="nav-action cart-action" href="cart.html"
+          ><svg aria-hidden="true" viewbox="0 0 24 24">
+            <path
+              d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L20.5 8H7"
+            ></path>
+            <circle cx="10" cy="19" r="1.4"></circle>
+            <circle cx="18" cy="19" r="1.4"></circle></svg
+          ><span class="action-label">Sepet</span
+          ><span class="cart-count" id="headerCartCount">0</span></a
+        ><a
+          aria-label="Profil"
+          class="nav-action profile-action"
+          href="profile.html"
+          ><span aria-hidden="true" class="profile-emoji">👤</span
+          ><span class="action-label">Profil</span></a
+        ><a class="build-now-button build-now" href="builder.html"
+          >+ Sistem Topla</a
+        >
+      </div>
+    </header>
+    <main class="builder-layout">
+      <aside class="builder-sidebar">
+        <div class="sidebar-title">Yapılandırma</div>
+        <nav class="component-navigation">
+          <a class="component-nav-item" href="builder.html"
+            ><span class="component-nav-icon">◉</span><span>İşlemci</span></a
+          ><a class="component-nav-item active" href="gpu.html"
+            ><span class="component-nav-icon">▦</span
+            ><span>Ekran Kartı</span></a
+          ><a class="component-nav-item" href="motherboard.html"
+            ><span class="component-nav-icon">▣</span><span>Anakart</span></a
+          ><a class="component-nav-item" href="ram.html"
+            ><span class="component-nav-icon">▥</span
+            ><span>RAM / Bellek</span></a
+          ><a class="component-nav-item" href="storage.html"
+            ><span class="component-nav-icon">▰</span><span>Depolama</span></a
+          ><a class="component-nav-item" href="case.html"
+            ><span class="component-nav-icon">□</span><span>Kasa</span></a
+          ><a class="component-nav-item" href="psu.html"
+            ><span class="component-nav-icon">⚡</span
+            ><span>Güç Kaynağı</span></a
+          ><a class="component-nav-item" href="cooler.html"
+            ><span class="component-nav-icon">❄</span
+            ><span>İşlemci Soğutucu</span></a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="build-progress">
+            <div class="build-progress-top">
+              <span>Sistem İlerlemesi</span
+              ><strong id="progressText">0 / 8</strong>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+          <button class="save-build-button" id="saveBuildButton" type="button">
+            Sistemi Kaydet
+          </button>
+        </div>
+      </aside>
+      <section class="builder-main">
+        <div class="builder-breadcrumb">ADIM 02 / EKRAN KARTI SEÇİMİ</div>
+        <div class="builder-heading">
+          <div>
+            <h1>Ekran Kartınızı Seçin</h1>
+            <p>
+              Hedeflediğiniz çözünürlük, kare hızı ve görüntü kalitesi için
+              uygun ekran kartını seçin.
+            </p>
+          </div>
+          <div class="step-indicator">
+            <span>Mevcut Adım</span><strong>02</strong>
+          </div>
+        </div>
+        <section aria-label="Ürün filtreleri" class="filter-panel">
+          <div class="filter-group">
+            <label for="filter-brand">Marka</label
+            ><select data-filter="brand" id="filter-brand">
+              <option value="all">Tüm Markalar</option>
+              <option value="nvidia">NVIDIA</option>
+              <option value="amd">AMD</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-memory">Bellek</label
+            ><select data-filter="memory" id="filter-memory">
+              <option value="all">Tüm Bellekler</option>
+              <option value="24gb">24 GB</option>
+            </select>
+          </div>
+          <button class="reset-button" id="resetFilters" type="button">
+            Filtreleri Temizle
+          </button>
+        </section>
+        <div class="results-line">
+          <span><strong id="resultCount">2</strong> ürün gösteriliyor</span
+          ><span id="selectionHint">Bir ürün seçerek devam edin.</span>
+        </div>
+        <section class="product-grid" id="productGrid">
+          <article
+            class="product-card"
+            data-brand="nvidia"
+            data-brand-name="NVIDIA"
+            data-memory="24gb"
+            data-name="GeForce RTX 4090"
+            data-price="93999"
+            data-wattage="450"
+          >
+            <div class="product-badge">Amiral Gemisi</div>
+            <div class="product-image">
+              <span>RTX</span><small>NVIDIA</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">NVIDIA</span>
+              <h2>GeForce RTX 4090</h2>
+              <ul>
+                <li>24 GB GDDR6X bellek</li>
+                <li>DLSS 3 ve ışın izleme</li>
+                <li>4K Ultra oyun performansı</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺93.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="amd"
+            data-brand-name="AMD"
+            data-memory="24gb"
+            data-name="Radeon RX 7900 XTX"
+            data-price="51999"
+            data-wattage="355"
+          >
+            <div class="product-badge">4K Performans</div>
+            <div class="product-image"><span>RX</span><small>AMD</small></div>
+            <div class="product-info">
+              <span class="product-brand">AMD</span>
+              <h2>Radeon RX 7900 XTX</h2>
+              <ul>
+                <li>24 GB GDDR6 bellek</li>
+                <li>AMD FSR desteği</li>
+                <li>Üst seviye 4K oyun</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺51.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+        </section>
+        <div class="empty-state" hidden="" id="emptyState">
+          Seçtiğiniz filtrelerle eşleşen ürün bulunamadı.
+        </div>
+        <section class="performance-panel">
+          <div>
+            <span>Sistem Özeti</span>
+            <h2>Seçiminizin Etkisi</h2>
+          </div>
+          <div class="performance-grid">
+            <div class="performance-item">
+              <span>Seçilen Bileşen</span
+              ><strong id="selectedProductName">Henüz seçilmedi</strong>
+            </div>
+            <div class="performance-item">
+              <span>Bileşen Fiyatı</span
+              ><strong id="selectedProductPrice">₺0</strong>
+            </div>
+            <div class="performance-item">
+              <span>Tahmini Sistem Toplamı</span
+              ><strong id="buildTotal">₺0</strong>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-actions">
+          <a class="secondary-button" href="builder.html">← İşlemciye Dön</a
+          ><a
+            class="primary-button disabled"
+            href="motherboard.html"
+            id="continueButton"
+            >Anakarta Geç →</a
+          >
+        </div>
+      </section>
+      <aside class="build-summary">
+        <div class="summary-title">
+          <span>Canlı Sistem Durumu</span><strong>Aktif</strong>
+        </div>
+        <div class="preview-placeholder">
+          <span id="previewCode">RF</span
+          ><small>Seçilen bileşen burada görünür</small>
+        </div>
+        <section class="summary-section">
+          <span>Bu Adımdaki Seçim</span
+          ><strong id="summarySelectedName">Seçilmedi</strong>
+        </section>
+        <section class="summary-section">
+          <span>Seçilen Parça Sayısı</span
+          ><strong id="selectedCount">0 / 8</strong>
+        </section>
+        <section class="summary-section">
+          <span>Tahmini Güç</span><strong id="estimatedWattage">0 W</strong>
+        </section>
+        <section class="summary-total">
+          <div>
+            <span>Sistem Toplamı</span
+            ><small>Vergiler ödeme sırasında hesaplanır</small>
+          </div>
+          <strong id="summaryBuildTotal">₺0</strong>
+        </section>
+        <button
+          class="primary-action"
+          disabled=""
+          id="addToBuildButton"
+          type="button"
+        >
+          Seçimi Sisteme Ekle</button
+        ><button
+          class="secondary-action"
+          id="resetSelectionButton"
+          type="button"
+        >
+          Seçimi Sıfırla
+        </button>
+      </aside>
+    </main>
+    <script src="component-page.js"></script>
+    <script src="rigforge-shell.js"></script>
+  </body>
+</html>

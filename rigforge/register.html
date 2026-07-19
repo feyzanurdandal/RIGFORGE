@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>RigForge | Kayıt Ol</title>
+    <link href="shared.css" rel="stylesheet" />
+    <link href="auth.css" rel="stylesheet" />
+    <link href="rigforge-shell.css" rel="stylesheet" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body class="auth-body">
+    <div class="auth-shell">
+      <section class="auth-visual register-visual">
+        <a class="brand" href="index.html">RIGFORGE</a>
+        <div>
+          <span class="eyebrow">RIGFORGE'A KATIL</span>
+          <h1>Hayalindeki sistemi oluşturmaya başla.</h1>
+          <p>
+            Parçaları karşılaştır, sistemlerini kaydet ve siparişlerini kolayca
+            takip et.
+          </p>
+        </div>
+      </section>
+      <section class="auth-panel">
+        <div class="auth-card">
+          <a class="back-home-link auth-back-link" href="index.html"
+            >← Ana Sayfaya Dön</a
+          >
+          <h2>Hesap Oluştur</h2>
+          <p class="muted">Birkaç adımda ücretsiz üye ol.</p>
+          <form id="registerForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="label">Ad</label
+                ><input class="input" id="firstName" required="" />
+              </div>
+              <div class="form-group">
+                <label class="label">Soyad</label
+                ><input class="input" id="lastName" required="" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="label">E-posta</label
+              ><input
+                class="input"
+                id="registerEmail"
+                required=""
+                type="email"
+              />
+            </div>
+            <div class="form-group">
+              <label class="label">Telefon</label
+              ><input class="input" id="phone" placeholder="05xx xxx xx xx" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="label">Şifre</label
+                ><input
+                  class="input"
+                  id="registerPassword"
+                  required=""
+                  type="password"
+                />
+              </div>
+              <div class="form-group">
+                <label class="label">Şifre Tekrar</label
+                ><input
+                  class="input"
+                  id="confirmPassword"
+                  required=""
+                  type="password"
+                />
+              </div>
+            </div>
+            <div class="captcha-group">
+              <label class="label" for="registerCaptchaInput"
+                >Güvenlik Kodu</label
+              >
+              <div class="captcha-row">
+                <div
+                  aria-label="Güvenlik kodu"
+                  class="captcha-code"
+                  id="registerCaptchaCode"
+                ></div>
+                <button
+                  aria-label="Güvenlik kodunu yenile"
+                  class="captcha-refresh"
+                  id="refreshRegisterCaptcha"
+                  type="button"
+                >
+                  ↻ Yenile
+                </button>
+              </div>
+              <input
+                autocomplete="off"
+                class="input"
+                id="registerCaptchaInput"
+                inputmode="text"
+                placeholder="Yukarıdaki kodu yazın"
+                required=""
+              />
+            </div>
+            <label class="terms"
+              ><input id="terms" required="" type="checkbox" /> Kullanım
+              koşullarını ve gizlilik politikasını kabul ediyorum.</label
+            >
+            <button class="primary-btn full-btn" type="submit">Kayıt Ol</button>
+            <p class="form-status" id="registerStatus"></p>
+          </form>
+          <p class="switch-text">
+            Zaten hesabın var mı? <a href="login.html">Giriş yap</a>
+          </p>
+        </div>
+      </section>
+    </div>
+    <script src="auth.js"></script>
+    <script src="rigforge-shell.js"></script>
+  </body>
+</html>

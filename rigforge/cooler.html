@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="RigForge oyuncu bilgisayarı bileşen seçimi"
+      name="description"
+    />
+    <title>RigForge | İşlemci Soğutucu Seçimi</title>
+    <link href="rigforge-shell.css" rel="stylesheet" />
+    <link href="component-pages.css" rel="stylesheet" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body
+    data-component-key="cooler"
+    data-component-label="İşlemci Soğutucu"
+    data-step="8"
+  >
+    <header class="site-header rigforge-header">
+      <a class="brand rigforge-brand" href="index.html"
+        ><span class="brand-mark">R</span><span>RIGFORGE</span></a
+      >
+      <nav aria-label="Ana menü" class="main-nav">
+        <a href="index.html">Sistemler</a
+        ><a href="index.html#components">Bileşenler</a
+        ><a class="active" href="builder.html">Sistem Topla</a
+        ><a href="index.html#support">Destek</a>
+      </nav>
+      <div class="header-actions">
+        <a aria-label="Sepet" class="nav-action cart-action" href="cart.html"
+          ><svg aria-hidden="true" viewbox="0 0 24 24">
+            <path
+              d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L20.5 8H7"
+            ></path>
+            <circle cx="10" cy="19" r="1.4"></circle>
+            <circle cx="18" cy="19" r="1.4"></circle></svg
+          ><span class="action-label">Sepet</span
+          ><span class="cart-count" id="headerCartCount">0</span></a
+        ><a
+          aria-label="Profil"
+          class="nav-action profile-action"
+          href="profile.html"
+          ><span aria-hidden="true" class="profile-emoji">👤</span
+          ><span class="action-label">Profil</span></a
+        ><a class="build-now-button build-now" href="builder.html"
+          >+ Sistem Topla</a
+        >
+      </div>
+    </header>
+    <main class="builder-layout">
+      <aside class="builder-sidebar">
+        <div class="sidebar-title">Yapılandırma</div>
+        <nav class="component-navigation">
+          <a class="component-nav-item" href="builder.html"
+            ><span class="component-nav-icon">◉</span><span>İşlemci</span></a
+          ><a class="component-nav-item" href="gpu.html"
+            ><span class="component-nav-icon">▦</span
+            ><span>Ekran Kartı</span></a
+          ><a class="component-nav-item" href="motherboard.html"
+            ><span class="component-nav-icon">▣</span><span>Anakart</span></a
+          ><a class="component-nav-item" href="ram.html"
+            ><span class="component-nav-icon">▥</span
+            ><span>RAM / Bellek</span></a
+          ><a class="component-nav-item" href="storage.html"
+            ><span class="component-nav-icon">▰</span><span>Depolama</span></a
+          ><a class="component-nav-item" href="case.html"
+            ><span class="component-nav-icon">□</span><span>Kasa</span></a
+          ><a class="component-nav-item" href="psu.html"
+            ><span class="component-nav-icon">⚡</span
+            ><span>Güç Kaynağı</span></a
+          ><a class="component-nav-item active" href="cooler.html"
+            ><span class="component-nav-icon">❄</span
+            ><span>İşlemci Soğutucu</span></a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="build-progress">
+            <div class="build-progress-top">
+              <span>Sistem İlerlemesi</span
+              ><strong id="progressText">0 / 8</strong>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+          <button class="save-build-button" id="saveBuildButton" type="button">
+            Sistemi Kaydet
+          </button>
+        </div>
+      </aside>
+      <section class="builder-main">
+        <div class="builder-breadcrumb">ADIM 08 / İŞLEMCI SOĞUTUCU SEÇİMİ</div>
+        <div class="builder-heading">
+          <div>
+            <h1>İşlemci Soğutucunuzu Seçin</h1>
+            <p>
+              İşlemcinizin sıcaklığını ve gürültü seviyesini kontrol altında
+              tutacak soğutucuyu seçin.
+            </p>
+          </div>
+          <div class="step-indicator">
+            <span>Mevcut Adım</span><strong>08</strong>
+          </div>
+        </div>
+        <section aria-label="Ürün filtreleri" class="filter-panel">
+          <div class="filter-group">
+            <label for="filter-type">Soğutma Türü</label
+            ><select data-filter="type" id="filter-type">
+              <option value="all">Tüm Türler</option>
+              <option value="air">Hava Soğutma</option>
+              <option value="aio">Sıvı Soğutma</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-size">Radyatör Boyutu</label
+            ><select data-filter="size" id="filter-size">
+              <option value="all">Tüm Boyutlar</option>
+              <option value="single">Hava Soğutucu</option>
+              <option value="240">240 mm</option>
+              <option value="360">360 mm</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-brand">Marka</label
+            ><select data-filter="brand" id="filter-brand">
+              <option value="all">Tüm Markalar</option>
+              <option value="noctua">Noctua</option>
+              <option value="corsair">Corsair</option>
+              <option value="nzxt">NZXT</option>
+              <option value="coolermaster">Cooler Master</option>
+            </select>
+          </div>
+          <button class="reset-button" id="resetFilters" type="button">
+            Filtreleri Temizle
+          </button>
+        </section>
+        <div class="results-line">
+          <span><strong id="resultCount">6</strong> ürün gösteriliyor</span
+          ><span id="selectionHint">Bir ürün seçerek devam edin.</span>
+        </div>
+        <section class="product-grid" id="productGrid">
+          <article
+            class="product-card"
+            data-brand="noctua"
+            data-brand-name="Noctua"
+            data-name="NH-D15 chromax.black"
+            data-price="4999"
+            data-size="single"
+            data-type="air"
+          >
+            <div class="product-badge">Silent</div>
+            <div class="product-image">
+              <span>AIR COOLER</span><small>Noctua</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">Noctua</span>
+              <h2>NH-D15 chromax.black</h2>
+              <ul>
+                <li>Dual-tower heatsink</li>
+                <li>Two premium 140mm fans</li>
+                <li>Excellent low-noise cooling</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺4.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="corsair"
+            data-brand-name="Corsair"
+            data-name="iCUE LINK H150i LCD"
+            data-price="12999"
+            data-size="360"
+            data-type="aio"
+          >
+            <div class="product-badge">RGB</div>
+            <div class="product-image">
+              <span>360mm AIO</span><small>Corsair</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">Corsair</span>
+              <h2>iCUE LINK H150i LCD</h2>
+              <ul>
+                <li>360mm radiator</li>
+                <li>LCD pump display</li>
+                <li>Three RGB fans</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺12.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="nzxt"
+            data-brand-name="NZXT"
+            data-name="Kraken Elite 360 RGB"
+            data-price="12999"
+            data-size="360"
+            data-type="aio"
+          >
+            <div class="product-badge">Premium</div>
+            <div class="product-image">
+              <span>360mm AIO</span><small>NZXT</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">NZXT</span>
+              <h2>Kraken Elite 360 RGB</h2>
+              <ul>
+                <li>360mm radiator</li>
+                <li>Wide-angle LCD screen</li>
+                <li>RGB fan lighting</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺12.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="coolermaster"
+            data-brand-name="Cooler Master"
+            data-name="MasterLiquid 240 Atmos"
+            data-price="5999"
+            data-size="240"
+            data-type="aio"
+          >
+            <div class="product-badge">Value</div>
+            <div class="product-image">
+              <span>240mm AIO</span><small>Cooler Master</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">Cooler Master</span>
+              <h2>MasterLiquid 240 Atmos</h2>
+              <ul>
+                <li>240mm radiator</li>
+                <li>Dual 120mm fans</li>
+                <li>Compact pump design</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺5.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="coolermaster"
+            data-brand-name="Cooler Master"
+            data-name="Hyper 212 Halo"
+            data-price="1999"
+            data-size="single"
+            data-type="air"
+          >
+            <div class="product-badge">Budget</div>
+            <div class="product-image">
+              <span>AIR COOLER</span><small>Cooler Master</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">Cooler Master</span>
+              <h2>Hyper 212 Halo</h2>
+              <ul>
+                <li>Single-tower heatsink</li>
+                <li>120mm RGB fan</li>
+                <li>Broad socket compatibility</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺1.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="product-card"
+            data-brand="corsair"
+            data-brand-name="Corsair"
+            data-name="H100i RGB Elite"
+            data-price="6999"
+            data-size="240"
+            data-type="aio"
+          >
+            <div class="product-badge">Compact</div>
+            <div class="product-image">
+              <span>240mm AIO</span><small>Corsair</small>
+            </div>
+            <div class="product-info">
+              <span class="product-brand">Corsair</span>
+              <h2>H100i RGB Elite</h2>
+              <ul>
+                <li>240mm radiator</li>
+                <li>Two 120mm fans</li>
+                <li>Quiet pump operation</li>
+              </ul>
+              <div class="product-footer">
+                <span class="price">₺6.999</span
+                ><button class="select-button" type="button">
+                  Bileşeni Seç
+                </button>
+              </div>
+            </div>
+          </article>
+        </section>
+        <div class="empty-state" hidden="" id="emptyState">
+          Seçtiğiniz filtrelerle eşleşen ürün bulunamadı.
+        </div>
+        <section class="performance-panel">
+          <div>
+            <span>Sistem Özeti</span>
+            <h2>Seçiminizin Etkisi</h2>
+          </div>
+          <div class="performance-grid">
+            <div class="performance-item">
+              <span>Seçilen Bileşen</span
+              ><strong id="selectedProductName">Henüz seçilmedi</strong>
+            </div>
+            <div class="performance-item">
+              <span>Bileşen Fiyatı</span
+              ><strong id="selectedProductPrice">₺0</strong>
+            </div>
+            <div class="performance-item">
+              <span>Tahmini Sistem Toplamı</span
+              ><strong id="buildTotal">₺0</strong>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-actions">
+          <a class="secondary-button" href="psu.html">← Güç Kaynağına Dön</a
+          ><a
+            class="primary-button disabled"
+            href="cart.html"
+            id="continueButton"
+            >Sistemi Tamamla →</a
+          >
+        </div>
+      </section>
+      <aside class="build-summary">
+        <div class="summary-title">
+          <span>Canlı Sistem Durumu</span><strong>Aktif</strong>
+        </div>
+        <div class="preview-placeholder">
+          <span id="previewCode">RF</span
+          ><small>Seçilen bileşen burada görünür</small>
+        </div>
+        <section class="summary-section">
+          <span>Bu Adımdaki Seçim</span
+          ><strong id="summarySelectedName">Seçilmedi</strong>
+        </section>
+        <section class="summary-section">
+          <span>Seçilen Parça Sayısı</span
+          ><strong id="selectedCount">0 / 8</strong>
+        </section>
+        <section class="summary-section">
+          <span>Tahmini Güç</span><strong id="estimatedWattage">0 W</strong>
+        </section>
+        <section class="summary-total">
+          <div>
+            <span>Sistem Toplamı</span
+            ><small>Vergiler ödeme sırasında hesaplanır</small>
+          </div>
+          <strong id="summaryBuildTotal">₺0</strong>
+        </section>
+        <button
+          class="primary-action"
+          disabled=""
+          id="addToBuildButton"
+          type="button"
+        >
+          Seçimi Sisteme Ekle</button
+        ><button
+          class="secondary-action"
+          id="resetSelectionButton"
+          type="button"
+        >
+          Seçimi Sıfırla
+        </button>
+      </aside>
+    </main>
+    <script src="component-page.js"></script>
+    <script src="rigforge-shell.js"></script>
+  </body>
+</html>
