@@ -9,6 +9,7 @@ public class AppDbContext : DbContext
 
     public DbSet<Product> Urunler { get; set; }
     public DbSet<User> Kullanicilar { get; set; }
+    public DbSet<Adres> Adresler { get; set; }
     public DbSet<Cart> Sepetler { get; set; }
     public DbSet<CartItem> SepetDetaylari { get; set; }
     public DbSet<Order> Siparisler { get; set; }
@@ -22,8 +23,19 @@ public class AppDbContext : DbContext
 
         modelBuilder.Entity<Product>().ToTable("Urunler").HasKey(p => p.UrunID);
         modelBuilder.Entity<User>().ToTable("Kullanicilar").HasKey(u => u.KullaniciID);
+        modelBuilder.Entity<Adres>().ToTable("Adresler").HasKey(a => a.AdresID);
         modelBuilder.Entity<Cart>().ToTable("Sepetler").HasKey(c => c.SepetID);
-        modelBuilder.Entity<CartItem>().ToTable("SepetDetaylari").HasKey(ci => ci.SepetDetayID);
+        
+        // CartItem <-> Cart İlişkisini SQL Kolon Adıyla (SepetID) Eşleme
+        modelBuilder.Entity<CartItem>()
+            .ToTable("SepetDetaylari")
+            .HasKey(ci => ci.SepetDetayID);
+
+        modelBuilder.Entity<CartItem>()
+            .HasOne(ci => ci.Sepet)
+            .WithMany(c => c.SepetDetaylari)
+            .HasForeignKey(ci => ci.SepetID); // EF Core'un 'CartSepetID' aramasını engeller
+
         modelBuilder.Entity<Order>().ToTable("Siparisler").HasKey(o => o.SiparisID);
         modelBuilder.Entity<OrderItem>().ToTable("SiparisDetaylari").HasKey(oi => oi.SiparisDetayID);
 
