@@ -13,6 +13,8 @@ public class AppDbContext : DbContext
     public DbSet<CartItem> SepetDetaylari { get; set; }
     public DbSet<Order> Siparisler { get; set; }
     public DbSet<OrderItem> SiparisDetaylari { get; set; }
+    public DbSet<CpuDetail> IslemciOzellikleri { get; set; }
+    public DbSet<GpuDetail> EkranKartiOzellikleri { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -20,17 +22,16 @@ public class AppDbContext : DbContext
 
         modelBuilder.Entity<Product>().ToTable("Urunler").HasKey(p => p.UrunID);
         modelBuilder.Entity<User>().ToTable("Kullanicilar").HasKey(u => u.KullaniciID);
-        
-        // Sepet İlişkileri
         modelBuilder.Entity<Cart>().ToTable("Sepetler").HasKey(c => c.SepetID);
         modelBuilder.Entity<CartItem>().ToTable("SepetDetaylari").HasKey(ci => ci.SepetDetayID);
-        modelBuilder.Entity<CartItem>()
-            .HasOne(ci => ci.Urun)
-            .WithMany()
-            .HasForeignKey(ci => ci.UrunID);
-
-        // Sipariş İlişkileri
         modelBuilder.Entity<Order>().ToTable("Siparisler").HasKey(o => o.SiparisID);
         modelBuilder.Entity<OrderItem>().ToTable("SiparisDetaylari").HasKey(oi => oi.SiparisDetayID);
+
+        // Sistem Toplama Parça İlişkileri
+        modelBuilder.Entity<CpuDetail>().ToTable("IslemciOzellikleri").HasKey(c => c.IslemciID);
+        modelBuilder.Entity<CpuDetail>().HasOne(c => c.Urun).WithMany().HasForeignKey(c => c.UrunID);
+
+        modelBuilder.Entity<GpuDetail>().ToTable("EkranKartiOzellikleri").HasKey(g => g.EkranKartiID);
+        modelBuilder.Entity<GpuDetail>().HasOne(g => g.Urun).WithMany().HasForeignKey(g => g.UrunID);
     }
 }
