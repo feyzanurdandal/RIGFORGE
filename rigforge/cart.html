@@ -45,6 +45,7 @@
         >
       </div>
     </header>
+
     <section class="page-hero">
       <div class="container">
         <span class="eyebrow">ALIŞVERİŞ SEPETİ</span>
@@ -54,27 +55,32 @@
         </p>
       </div>
     </section>
+
     <main class="section">
       <div class="container cart-layout">
-        <a class="back-home-link" href="index.html">← Ana Sayfaya Dön</a>
-        <section>
+        <!-- SOL SÜTUN: Ürün Listesi -->
+        <section class="cart-left-col">
+          <a class="back-home-link" href="index.html">← Ana Sayfaya Dön</a>
           <div class="cart-toolbar">
             <h2 class="section-title">
               Sepetim <span class="muted" id="itemCount"></span>
             </h2>
             <button class="text-btn" id="clearCart">Sepeti temizle</button>
           </div>
+
           <div class="cart-items" id="cartItems"></div>
+
           <div class="empty-state card" hidden="" id="emptyCart">
             <div class="empty-icon">🛒</div>
             <h3>Sepetin şu anda boş</h3>
             <p>
-              Bir sistem oluşturarak veya ürün ekleyerek alışverişe
-              başlayabilirsin.
+              Bir sistem oluşturarak veya ürün ekleyerek alışverişe başlayabilirsin.
             </p>
             <a class="primary-btn" href="builder.html">Sistemini Topla</a>
           </div>
         </section>
+
+        <!-- SAĞ SÜTUN: Sipariş Özeti Kartı -->
         <aside class="summary card">
           <h2>Sipariş Özeti</h2>
           <div class="summary-row">
@@ -98,9 +104,11 @@
         </aside>
       </div>
     </main>
+
     <footer class="footer">
       <span>© 2026 RigForge</span><span>Güvenli ödeme • Hızlı teslimat</span>
     </footer>
+
     <script src="cart.js"></script>
     <script src="rigforge-shell.js"></script>
   </body>

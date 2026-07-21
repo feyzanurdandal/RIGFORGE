@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RigForge.API/RigForge.API.csproj" />
+  <Project Path="RigForge.Core/RigForge.Core.csproj" />
+  <Project Path="RigForge.Infrastructure/RigForge.Infrastructure.csproj" />
+</Solution>
