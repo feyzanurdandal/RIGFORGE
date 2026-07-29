@@ -44,9 +44,18 @@ public class AdminController : ControllerBase
     [HttpPost("products")]
     public async Task<IActionResult> CreateProduct([FromBody] CreateProductDto dto)
     {
+        if (string.IsNullOrWhiteSpace(dto.UrunAdi))
+            return BadRequest(new { message = "Ürün adı zorunludur." });
+        if (dto.Fiyat <= 0)
+            return BadRequest(new { message = "Fiyat sıfırdan büyük olmalıdır." });
+        if (dto.Stok < 0)
+            return BadRequest(new { message = "Stok negatif olamaz." });
+        if (dto.KategoriID <= 0 || dto.MarkaID <= 0)
+            return BadRequest(new { message = "Kategori ve marka bilgisi geçersiz." });
+
         var product = new Product
         {
-            UrunAdi = dto.UrunAdi,
+            UrunAdi = dto.UrunAdi.Trim(),
             Aciklama = dto.Aciklama,
             Fiyat = dto.Fiyat,
             Stok = dto.Stok,
@@ -57,10 +66,19 @@ public class AdminController : ControllerBase
             OlusturmaTarihi = DateTime.Now
         };
 
-        _context.Urunler.Add(product);
-        await _context.SaveChangesAsync();
-
-        return Ok(new { message = "Ürün başarıyla eklendi.", urunId = product.UrunID });
+        try
+        {
+            _context.Urunler.Add(product);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Ürün başarıyla eklendi.", urunId = product.UrunID });
+        }
+        catch (DbUpdateException)
+        {
+            return BadRequest(new
+            {
+                message = "Ürün veritabanına eklenemedi. Seçilen kategori veya marka veritabanında bulunmuyor olabilir."
+            });
+        }
     }
 
     // GET: api/admin/orders

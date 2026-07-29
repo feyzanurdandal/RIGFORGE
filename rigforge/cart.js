@@ -1,5 +1,5 @@
-const API_CART = "http://localhost:5000/api/cart";
-const API_ORDERS = "http://localhost:5000/api/orders";
+const API_CART = "/api/cart";
+const API_ORDERS = "/api/orders";
 
 const componentKeys = [
   "cpu",
@@ -209,7 +209,7 @@ document.getElementById("checkoutBtn")?.addEventListener("click", async () => {
   const calculatedTotal = Math.max(0, subtotal - discount);
 
   try {
-    const response = await fetch(`${API_ORDERS}/checkout`, {
+    const response = await window.RigForgeApi.fetch(`${API_ORDERS}/checkout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

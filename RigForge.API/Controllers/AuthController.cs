@@ -63,7 +63,8 @@ public class AuthController : ControllerBase
             Token = token,
             Email = user.Email,
             AdSoyad = $"{user.Ad} {user.Soyad}",
-            Rol = user.Rol
+            Rol = user.Rol,
+            Telefon = user.Telefon
         });
     }
 

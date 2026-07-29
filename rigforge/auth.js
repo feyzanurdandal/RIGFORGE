@@ -159,7 +159,7 @@
 (() => {
   "use strict";
 
-  const API_BASE = "http://localhost:5000/api/auth";
+  const API_BASE = "/api/auth";
   const CAPTCHA_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   const captchaValues = {};
 
@@ -216,7 +216,7 @@
       status.style.color = "#74afff";
       status.textContent = "Giriş yapılıyor...";
 
-      const response = await fetch(`${API_BASE}/login`, {
+      const response = await window.RigForgeApi.fetch(`${API_BASE}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email, sifre: password }),
@@ -232,6 +232,7 @@
             name: data.adSoyad,
             email: data.email,
             role: data.rol,
+            phone: data.telefon || "",
           }),
         );
 
@@ -247,7 +248,7 @@
       }
     } catch (err) {
       status.style.color = "var(--red)";
-      status.textContent = "Sunucuya bağlanılamadı. API açık mı?";
+      status.textContent = err.message || "Sunucuya bağlanılamadı. API açık mı?";
     }
   });
 
@@ -270,7 +271,7 @@
       status.style.color = "#74afff";
       status.textContent = "Kayıt yapılıyor...";
 
-      const response = await fetch(`${API_BASE}/register`, {
+      const response = await window.RigForgeApi.fetch(`${API_BASE}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -297,7 +298,7 @@
       }
     } catch (err) {
       status.style.color = "var(--red)";
-      status.textContent = "Sunucu hatası oluştu.";
+      status.textContent = err.message || "Sunucu hatası oluştu.";
     }
   });
 })();
