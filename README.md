@@ -9,6 +9,12 @@ RigForge, bilgisayar bileşenlerinin satışına yönelik geliştirilen modern b
 - Ece Birick
 - Feyza Nur Dandal
 
+## Proje Videosu 
+- Link: https://drive.google.com/file/d/1vyGfNE5j-O9XrCbFiiP4EcycZCrKoTwY/view?usp=drivesdk
+
+## Proje Raporu
+- Link: https://docs.google.com/document/d/14CS9Tab4angFP42RueYBSc46rpbjObQA/edit?usp=drivesdk&ouid=100856546851127024987&rtpof=true&sd=true
+
 ## 💻 Teknoloji Stack
 
 ### Frontend
