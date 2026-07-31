@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # 1. SQL Server Veritabanı Servisi
+  rigforge-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: rigforge-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=RigForge2026!SecurePass
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql-data:/var/opt/mssql/data
+    networks:
+      - rigforge-network
+
+  # 2. C# ASP.NET Core Web API Servisi
+  rigforge-api:
+    build:
+      context: .
+      dockerfile: RigForge.API/Dockerfile
+    container_name: rigforge-web-api
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=rigforge-db;Database=RigForgeDb;User Id=sa;Password=RigForge2026!SecurePass;TrustServerCertificate=True;
+    depends_on:
+      - rigforge-db
+    networks:
+      - rigforge-network
+
+networks:
+  rigforge-network:
+    driver: bridge
+
+volumes:
+  mssql-data:
